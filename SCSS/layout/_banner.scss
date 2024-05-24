@@ -1,0 +1,161 @@
+.banner {
+  padding: 0px 0 100px;
+  width: calc(100% - 280px);
+  margin-left: 140px;
+  margin-right: 140px;
+  position: relative;
+  overflow: hidden;
+ @media (max-width: 992px) {
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 80px);
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .bannerContainer {
+    display: flex;
+    @media (max-width: 768px){
+      display: flex;
+      flex-direction: column;
+    }
+    .bannerShape {
+      width: 72%;
+      height: 100%;
+      background-color: #333333;
+      clip-path: polygon(70% 0, 100% 0, 100% 100%, 0 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .profileImage {
+        width: 260px;
+        height: auto;
+        border-radius: 20%;
+        position: absolute;
+        right: 12%;
+        top: 50%;
+        transform: translateY(-50%);
+        filter: grayscale(55%);
+        cursor: pointer;
+        transition: filter 0.3s ease;
+        @media (max-width: 1024px){
+          right: 5%;
+        }
+        &:hover {
+          filter: grayscale(5%);
+        }
+      }
+    }
+
+    .bannerInfo {
+      width: 70%;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .textWrapper {
+        width: calc(70% - 20px);
+        margin-top: -90px;
+        font-family: 'Poppins', serif;
+        font-weight: normal;
+
+        h1 {
+          font-size: 39px;
+          margin: 0;
+
+          .black {
+            color: black;
+          }
+
+          .gray {
+            color: gray;
+          }
+        }
+
+        h3 {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 0 0 20px;
+
+    .bannerContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .bannerInfo {
+        width: 100%;
+        height: auto;
+        background-image: none;
+
+        .textWrapper {
+          width: calc(100% - 40px);
+          margin-top: 0;
+          margin-right: 20px;
+          padding: 0 20px;
+
+          h1 {
+            font-size: 24px;
+            text-align: left;
+            padding-top: 10px;
+          }
+
+          h3 {
+            font-size: 16px;
+            text-align: left;
+          }
+        }
+      }
+
+      .bannerShape {
+        width: 100%;
+        height: auto;
+        background-color: #333333;
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+        position: static;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+
+        .profileImage {
+          width: 100%;
+          max-width: 200px;
+          height: auto;
+          border-radius: 20%;
+          filter: grayscale(55%);
+          cursor: pointer;
+          transition: filter 0.3s ease;
+          position: static;
+          transform: none;
+          margin: 0 auto;
+
+          &:hover {
+            filter: grayscale(5%);
+          }
+        }
+      }
+    }
+  }
+}
